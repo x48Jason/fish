@@ -41,6 +41,10 @@ set -gx FZF_CTRL_T_OPTS "--height 60% \
 set -gx FZF_TMUX 1
 set -gx FZF_TMUX_OPTS "-p"
 
+if test -e $HOME/.config/fish/local.fish 
+	source $HOME/.config/fish/local.fish
+end
+
 if [ -z "$TMUX" ]
 	tmux attach -t default || tmux new -s default
 end
